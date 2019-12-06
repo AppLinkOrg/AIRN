@@ -1,7 +1,8 @@
 // pages/content/content.js
 import { AppBase } from "../../appbase";
 import { ApiConfig } from "../../apis/apiconfig";
-import { InstApi } from "../../apis/inst.api.js";
+import { InstApi } from "../../apis/inst.api.js"; 
+import { AiApi } from "../../apis/ai.api.js";
 
 class Content extends AppBase {
   constructor() {
@@ -15,9 +16,68 @@ class Content extends AppBase {
   onMyShow() {
     var that = this;
   }
+  bindaiocr(e){ 
+    var that=this;
+    var types=e.currentTarget.id;
+    var aiapi = new AiApi();
+    console.log(types,'类型');
+   this.Base.uploadOneImage("aitest", (ret) => {
+     
+      //  wx.showLoading({
+      //    title: '识别中...',
+      //  })
+    
+     aiapi.aiocr({ types: types, photo:ret}, (aiocr) => {
+       
+       if (aiocr!=null&&aiocr.ret == 0) {
+         console.log('a')
+         var jsondata = JSON.stringify(aiocr.data);
+         //wx.hideLoading();
+        //  2147483635
+         wx.navigateTo({
+           url: '/pages/details/details?json=' + jsondata 
+         })
+          
+       } else {
+         wx.showToast({
+           title: '请上传正确的图片~',
+           icon:'none'
+         })
+         console.log('b')
+       }
+       // if (aiocr != null && aiocr != '') {
+
+       // }
+
+       this.Base.setMyData({ aiocr })
+
+     })
+ 
+   }, undefined); 
+    
+ 
+  }
+
+ bindtodetail(e){
+   wx.scanCode({
+     scanType: ['barCode'],
+     success(res) {
+       console.log(res.result)
+
+       wx.navigateTo({
+         url: '/pages/details/details?barcode=' + res.result+'&tps=1'
+       })
+     }
+
+    })
+ }
+   
+
 }
 var content = new Content();
 var body = content.generateBodyJson();
 body.onLoad = content.onLoad;
-body.onMyShow = content.onMyShow;
+body.onMyShow = content.onMyShow; 
+body.bindaiocr = content.bindaiocr; 
+body.bindtodetail = content.bindtodetail; 
 Page(body)

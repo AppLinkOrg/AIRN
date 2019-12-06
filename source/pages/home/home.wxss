@@ -1,51 +1,14 @@
-.Top{
-  background-color:#2699EC;
+.orc-icon {
+  width: 100rpx;
+  height: 100rpx;
 }
-.search{
-  width:680rpx;
-  border-radius: 7rpx;
-  background-color: white;
+
+.block {
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 14rpx;
+  margin:20rpx 0 20rpx 0;
+  /* border: 2rpx solid black; */
+  box-shadow: 2rpx 6rpx 16rpx rgb(238, 237, 237);
 }
-.search_icon{
-  height:40rpx;
-  width:40rpx;
-}
-.Mid{
-  height: 150rpx;
-}
-.mid1{
-  background:#F6511D;
-  border-radius:10rpx;
-}
-.mid2{
-  background:#FFB400;
-  border-radius:10rpx;
-}
-.evaluation{
-  background-color: #2699EC;
-  border-radius: 10rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
-}
-.Under{
-  margin-top: 50rpx;
-  border-bottom: 1rpx solid rgb(233, 231, 231);
-}
-.phone{
-  border-radius: 10rpx;
-  box-shadow: 1px 1px 7px rgb(231, 228, 228);
-}
-.icon{
-  width: 110rpx;
-  height: 180rpx;
-}
-.column{
-  align-content: center;
-  flex-direction:column;
-}
-.ma-0{
-  margin-left: 20rpx;
-}
-.ma-1{
-  margin-left: 20rpx;
-}
+ 

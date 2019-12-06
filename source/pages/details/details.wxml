@@ -1,0 +1,8 @@
+<!--pages/details/details.wxml-->
+
+<view class="margin-40">
+  <view class="" wx:for='{{jsondata.item_list}}'>
+    <view class="">{{item.item}}：{{item.itemstring}}</view>
+  </view>
+</view>
+<view class="margin-40">{{barcode}}</view>
