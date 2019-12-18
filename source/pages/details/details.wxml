@@ -1,8 +1,9 @@
 <!--pages/details/details.wxml-->
 
-<view class="margin-40">
-  <view class="" wx:for='{{jsondata.item_list}}'>
-    <view class="">{{item.item}}：{{item.itemstring}}</view>
+<view class="margin-20">
+  <view class="" wx:for='{{jsondata.item_list}}' wx:for-index='idx'>
+    <view bindtap="copy" data-text="{{item.item}}：{{item.itemstring}}"  id="{{idx}}" class="padding-20 {{show==idx?'bg-green txt-white':''}}">{{item.item}}：{{item.itemstring}}</view>
   </view>
 </view>
+
 <view class="margin-40">{{barcode}}</view>

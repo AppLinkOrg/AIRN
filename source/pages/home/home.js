@@ -22,14 +22,15 @@ class Content extends AppBase {
     var aiapi = new AiApi();
     console.log(types,'类型');
    this.Base.uploadOneImage("aitest", (ret) => {
-     
-      //  wx.showLoading({
-      //    title: '识别中...',
-      //  })
-    
+     wx.showLoading({
+       title: '识别中...',
+     })
      aiapi.aiocr({ types: types, photo:ret}, (aiocr) => {
-       
-       if (aiocr!=null&&aiocr.ret == 0) {
+        
+       setTimeout(() => {
+         wx.hideLoading();
+       }, 2000)
+       if (aiocr!=null&&aiocr.ret == 0) { 
          console.log('a')
          var jsondata = JSON.stringify(aiocr.data);
          //wx.hideLoading();
