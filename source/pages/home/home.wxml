@@ -89,4 +89,11 @@
   </view>
   <view class="flex-1"></view>
 </view>
-<view style="height:100rpx;"></view>
+
+<view class="height-40"></view>
+<view  id="{{instinfo.otherappid}}" bindtap="toother"  class="  txt-primary text-center" style="height:60rpx;line-height:60rpx">关于我们</view>
+<view class="h6 txt-gray text-center" style="height:50rpx;line-height:50rpx">{{instinfo.banquan}}</view>
+<view class="height-40"></view>
+
+
+<image class="icon-50 radius-50 position" bindtap="phoneCall" id="{{instinfo.customerservicemobile}}" src="{{uploadpath}}resource/{{res.kefu}}"></image>

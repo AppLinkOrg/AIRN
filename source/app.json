@@ -15,5 +15,9 @@
     "navigationBarBackgroundColor": "#4ecad6",
     "navigationBarTextStyle": "white"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wx65c002ae19150d6d"
+  ]
 }

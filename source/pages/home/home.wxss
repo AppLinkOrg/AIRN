@@ -11,4 +11,12 @@
   /* border: 2rpx solid black; */
   box-shadow: 2rpx 6rpx 16rpx rgb(238, 237, 237);
 }
+
+ .position{
+   position: fixed;
+   top: 50%;
+   right: 20rpx;
+   z-index: 10;
+ }
+
  
